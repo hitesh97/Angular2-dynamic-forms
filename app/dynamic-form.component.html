@@ -1,0 +1,29 @@
+<div class="content-container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="row">
+      <div *ngFor="let question of questions" class="form-row">
+        <df-question [question]="question" [form]="form"></df-question>
+      </div>
+      <div class="form-row">
+        <!--<button type="submit" [disabled]="!form.valid">Save</button>-->
+        <button class="btn btn-sm btn-outline-primary btn-save-custom" type="submit" [disabled]="!form.valid">Save</button>
+        <button class="btn btn-sm btn-outline-danger btn-save-custom" type="button" (click)="clearForm()">Clear</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="payLoad" class="content-saved">
+  <h2>Saved values</h2>
+  <div class="content form-row">
+    <pre>{{payLoad | json}}</pre>
+  </div>
+</div>
+
+<div *ngIf="showGraph" class="content-graph">
+  <h2>Blood pressure graph</h2>
+  <div class="content form-row">
+    <chart *ngIf="data" [type]="type" [data]="data" [options]="options"></chart>
+    <span *ngIf="!data">Not enough data to show the blood pressure graph!</span>
+  </div>
+</div>

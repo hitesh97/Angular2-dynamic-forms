@@ -1,0 +1,18 @@
+<div [formGroup]="form" class="col-lg-12 form-group">
+  <!--<div class="row">-->
+    <label [attr.for]="question.key" class="col-lg-2 col-form-label">{{question.label}}</label>
+    
+    <div [ngSwitch]="question.controlType" class="col-lg-5">
+      <input *ngSwitchCase="'textbox'" class="form-control" [formControlName]="question.key"
+              [id]="question.key" [type]="question.type" max="{{question.validation.range.max}}" min="{{question.validation.range.min}}" [ngClass]="{'col-lg-12': question.onlySon, 'col-lg-6': !question.onlySon}">
+
+      <select *ngSwitchCase="'dropdown'" [formControlName]="question.key" [id]="question.key" [ngClass]="{'col-lg-12': question.onlySon, 'col-lg-6': !question.onlySon}" class="custom-select">
+        <option disabled value=""></option>
+        <option class="item" *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+      </select>
+
+    </div> 
+    <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
+  <!--</div>-->
+</div>
+

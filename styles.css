@@ -1,0 +1,42 @@
+body {
+  margin: 0 auto;
+  max-width: 60em;
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 1.5;
+  padding: 4em 1em;
+  color: #555;
+}
+
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+.content-container {
+  background-color: rgba(243, 246, 248, 0.75);
+  padding: 1em 1em;
+  border-top: 4px solid rgba(0, 119, 204, 1);
+}
+
+.content-saved, .content-graph {
+  margin-top: 3em;
+}
+
+.content-saved .content {
+  background-color: rgba(243, 246, 248, 0.75);
+  padding: 1em 1em;
+  border-top: 4px solid rgba(0, 150, 150, 1);
+}
+
+.content-graph .content {
+  background-color: rgba(243, 246, 248, 0.75);
+  padding: 1em 1em;
+  border-top: 4px solid rgba(120, 0, 150, 1);
+}
+
+.btn-save-custom {
+  margin-right: 2em;
+  float: right
+}
+
