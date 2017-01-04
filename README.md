@@ -1,9 +1,10 @@
 # Angular2 Dymanic Forms from JSON
 
 ## Description
-Building form from json (blood pressur form with some additional elements)
-## Dependecies
+Recursive build form from json file form.json (blood pressure form with some additional elements).
 
-`npm install`
-`npm start`
+## How to run?
+
+- `npm install`
+- `npm start`
 
